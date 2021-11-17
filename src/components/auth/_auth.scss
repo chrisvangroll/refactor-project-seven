@@ -1,0 +1,28 @@
+// body{
+//     margin-left: 1em;
+// }
+input{
+    display: block;
+    margin-bottom: 1em;
+}
+
+.authContainer{
+    height: 100vh;
+
+    .registrationWrapper{
+        @media(max-width: 650px){
+        width: 325px;
+
+        .authLogo{
+            width: 325px;
+        }
+    } 
+    .errorMessage{
+        color: red;
+        max-width: 325px;
+    }
+}
+    
+}
+
+

@@ -1,0 +1,83 @@
+.post{
+    border-radius: 18px 18px 0px 0px;
+    width: 501px;
+    @media (max-width: 650px) {
+        width: 100%;   
+    }
+
+    .postContainer{
+        background-color: #bdbdbd21;
+        width: 501px;
+        border-radius: 18px 18px 0px 0px;
+        @media (max-width: 650px) {
+            width: 100%;
+        }
+
+        .postLikeBtn{
+            background-color: $hotPink;
+            color: white;
+            border: none;
+            border-radius: 2em;
+            padding: 0px 5px;
+            cursor: pointer;
+            // transition: transform 200ms ease-in-out;
+
+            // &:hover{
+            //     transform: scale(1.1);
+            // }
+        }
+
+        .likeNumber{
+            cursor: pointer;
+        }
+
+        .likeList{
+            background-color: $accentCyan;
+            color: black;
+            font-weight: bold;
+            z-index: 100;
+            right: -21px;
+            top: 32px;
+            padding: 10px 16px;
+            border-radius: 10px;
+        }
+
+        .postEditIcon{
+            right: 11px;
+        
+            .fa-edit{
+                color: $cornFlower;
+            }
+
+            .modifyImg{
+                width: 400px;
+                @media (max-width: 650px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .gif{
+
+            width: 350px;
+            @media (max-width: 650px) {
+                width: 95%;
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

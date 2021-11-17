@@ -1,0 +1,281 @@
+.navbar {
+  border-bottom: solid 3px #36EEE0;
+}
+.navbar .logo {
+  width: 250px;
+}
+@media (max-width: 600px) {
+  .navbar .logo {
+    width: 180px;
+  }
+}
+.navbar .fa-bars {
+  color: #4C5270;
+  font-size: 1.5em;
+  position: relative;
+  top: 6px;
+}
+.navbar .nav-item:hover {
+  border-bottom: 2px solid #4C5270;
+}
+.navbar .nav-link {
+  color: #4C5270;
+  font-weight: bold;
+}
+.navbar .nav-link:hover {
+  color: #4C5270;
+}
+
+input {
+  display: block;
+  margin-bottom: 1em;
+}
+
+.authContainer {
+  height: 100vh;
+}
+@media (max-width: 650px) {
+  .authContainer .registrationWrapper {
+    width: 325px;
+  }
+  .authContainer .registrationWrapper .authLogo {
+    width: 325px;
+  }
+}
+.authContainer .registrationWrapper .errorMessage {
+  color: red;
+  max-width: 325px;
+}
+
+.allCommentsContainer {
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+  width: 100%;
+}
+.allCommentsContainer .commentBtn {
+  width: 500px;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #4C5270;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: none;
+}
+@media (max-width: 650px) {
+  .allCommentsContainer .commentBtn {
+    width: 100%;
+  }
+}
+.allCommentsContainer .commentSection {
+  max-height: 500px;
+  overflow: auto;
+}
+.allCommentsContainer .commentSection .commentContainer {
+  margin-bottom: 30px;
+}
+.allCommentsContainer .commentSection .commentContainer .comment {
+  background-color: #BCECE0;
+  border-radius: 15px;
+  padding: 8px 20px 8px 12px;
+  max-width: 500px;
+  margin-top: 9px;
+  margin-left: 10px;
+}
+.allCommentsContainer .editInput {
+  top: 9px;
+  left: 10px;
+  padding-top: 18px;
+}
+.allCommentsContainer .cancelEdit {
+  background: transparent;
+  border: none;
+  position: relative;
+  right: 7px;
+  bottom: -7px;
+  color: red;
+  font-size: 18px;
+  padding: 0px;
+}
+
+.likeContainer {
+  position: relative;
+  top: 25px;
+  right: 19px;
+  align-self: flex-end;
+  height: 39px;
+}
+.likeContainer .likeButton {
+  background-color: #F652A0;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+.likeContainer .numberOfCommentLikes {
+  cursor: pointer;
+}
+.likeContainer .commentLikers {
+  position: absolute;
+  top: 31px;
+  z-index: 100;
+  background-color: #36EEE0;
+  font-weight: bold;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: 10px;
+  min-width: 100px;
+}
+
+.editCommentBtn {
+  position: relative;
+  right: 66px;
+  bottom: 5px;
+}
+.editCommentBtn .fa-edit {
+  cursor: pointer;
+  color: #4C5270;
+}
+.editCommentBtn .deleteAndEditContainer {
+  z-index: 5;
+  right: -92px;
+  box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+}
+.editCommentBtn .deleteAndEditContainer .updateDeleteComment {
+  background-color: white;
+  width: 200px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 0px;
+}
+.editCommentBtn .deleteAndEditContainer .updateDeleteComment:hover {
+  background-color: #d6d6d6;
+}
+
+.makeComment {
+  width: 100%;
+}
+.makeComment .addComment {
+  height: 39px;
+  width: 75%;
+}
+@media (max-width: 650px) {
+  .makeComment .addComment {
+    width: 100%;
+  }
+}
+.makeComment .submitCommentBtn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #4C5270;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  border: none;
+  width: 25%;
+}
+@media (max-width: 650px) {
+  .makeComment .submitCommentBtn {
+    display: none;
+  }
+}
+
+.post {
+  border-radius: 18px 18px 0px 0px;
+  width: 501px;
+}
+@media (max-width: 650px) {
+  .post {
+    width: 100%;
+  }
+}
+.post .postContainer {
+  background-color: #bdbdbd21;
+  width: 501px;
+  border-radius: 18px 18px 0px 0px;
+}
+@media (max-width: 650px) {
+  .post .postContainer {
+    width: 100%;
+  }
+}
+.post .postContainer .postLikeBtn {
+  background-color: #F652A0;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+.post .postContainer .likeNumber {
+  cursor: pointer;
+}
+.post .postContainer .likeList {
+  background-color: #36EEE0;
+  color: black;
+  font-weight: bold;
+  z-index: 100;
+  right: -21px;
+  top: 32px;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+.post .postContainer .postEditIcon {
+  right: 11px;
+}
+.post .postContainer .postEditIcon .fa-edit {
+  color: #4C5270;
+}
+.post .postContainer .postEditIcon .modifyImg {
+  width: 400px;
+}
+@media (max-width: 650px) {
+  .post .postContainer .postEditIcon .modifyImg {
+    width: 100%;
+  }
+}
+.post .postContainer .gif {
+  width: 350px;
+}
+@media (max-width: 650px) {
+  .post .postContainer .gif {
+    width: 95%;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 1em;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.buttonOne {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  background-color: #4C5270;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  transition: transform 200ms ease-in-out;
+  border: none;
+}
+
+input {
+  display: block;
+  margin-bottom: 1em;
+}/*# sourceMappingURL=styles.css.map */

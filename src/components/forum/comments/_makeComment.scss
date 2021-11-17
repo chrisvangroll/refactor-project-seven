@@ -1,0 +1,31 @@
+.makeComment{
+    width: 100%;
+
+    .addComment{
+        height: 39px;
+        width: 75%;
+    
+        @media (max-width: 650px) {
+            width: 100%;
+        }
+    }
+
+    .submitCommentBtn{
+        display: inline-block;
+        padding: .5em 1.5em;
+        background-color: $cornFlower;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+        border: none;
+        width: 25%;
+    
+            @media (max-width: 650px) {
+                display: none;
+            }
+        }
+    
+}

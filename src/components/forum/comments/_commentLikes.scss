@@ -1,0 +1,33 @@
+.likeContainer{
+    position: relative;
+    top: 25px;
+    right: 19px;
+    align-self: flex-end;
+    height: 39px;
+ 
+    .likeButton{
+     background-color: $hotPink;
+     color: white;
+     border: none;
+     border-radius: 2em;
+     padding: 0px 5px;
+    cursor: pointer;
+     }
+ 
+     .numberOfCommentLikes{
+         cursor: pointer;
+     }
+ 
+     .commentLikers{
+         position: absolute;
+         top: 31px;
+         z-index: 100;
+         background-color: $accentCyan;
+         font-weight: bold;
+         z-index: 100;
+         padding: 10px 16px;
+         border-radius: 10px;
+         min-width: 100px;
+     }
+     
+ }

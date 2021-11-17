@@ -1,0 +1,81 @@
+.allCommentsContainer{
+    box-shadow: 0 4px 25px rgba(14, 36, 49, 0.15);
+    width: 100%;
+
+    .commentBtn{
+        width: 500px;
+        display: inline-block;
+        padding: .5em 1.5em;
+        background-color: $cornFlower;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: bold;
+       // transition: transform 200ms ease-in-out;
+        border: none;
+        @media (max-width: 650px) {
+            width: 100%;
+        }
+    }
+
+    .commentSection{
+        max-height: 500px;
+        overflow: auto;
+
+        .commentContainer{
+            margin-bottom: 30px;
+        
+            .comment{
+                background-color: $tiffanyBlue;
+                border-radius: 15px;
+                padding: 8px 20px 8px 12px;
+                max-width: 500px;
+                margin-top: 9px;
+                margin-left: 10px;
+            }
+                 
+        }
+    }
+
+    .editInput{
+        top: 9px;
+        left: 10px;
+        padding-top: 18px;
+    }
+
+    .cancelEdit{
+        background: transparent;
+        border: none;
+        position: relative;
+        right: 7px;
+        bottom: -7px;
+        color: red;
+        font-size: 18px;
+        padding: 0px;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

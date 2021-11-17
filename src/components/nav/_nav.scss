@@ -1,0 +1,34 @@
+.navbar{
+    border-bottom: solid 3px $accentCyan;
+
+    .logo{
+        width: 250px;
+    
+        @media (max-width: 600px) {
+            width: 180px;
+        }
+    }
+
+    .fa-bars{
+        color: $cornFlower;
+        font-size: 1.5em;
+        position: relative;
+        top: 6px;
+    }
+
+    .nav-item{
+        
+        &:hover{
+            border-bottom: 2px solid $cornFlower;
+        }
+    }
+    .nav-link{
+        color: $cornFlower;
+        font-weight: bold;
+
+        &:hover{
+            color: $cornFlower;
+        }
+    }
+}
+
