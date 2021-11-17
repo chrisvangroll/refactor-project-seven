@@ -3,13 +3,12 @@ import Axios from 'axios';
 import ListOfLikers from './likerNames';
 
 function Likes (props) {
+    const [likes, setLikes] = useState([]);
+    const [likeNames, setLikeNames] = useState([]);
 
     useEffect(() =>{
         getLikes();
     }, []);
-
-    const [likes, setLikes] = useState([]);
-    const [likeNames, setLikeNames] = useState([]);
 
     function getStorage(){
         let userId = localStorage.getItem('id');
@@ -24,7 +23,7 @@ function Likes (props) {
             } 
         }
         try{
-            const res = await Axios.get('https://p7-backend-cvg.herokuapp.com/forum/likes/' + props.uploadId4, config);
+            const res = await Axios.get('https://p7-backend-cvg.herokuapp.com/forum/likes/' + props.uploadId, config);
             setLikes(res.data.length); 
             setLikeNames(res.data);
             
@@ -42,7 +41,7 @@ function Likes (props) {
         try{
         const res = await Axios.post('https://p7-backend-cvg.herokuapp.com/forum/likes', {
             userId : getStorage(),
-            uploadId: props.uploadId4 
+            uploadId: props.uploadId 
         }
             );
             console.log(res);
@@ -52,7 +51,7 @@ function Likes (props) {
         getLikes();
     }
     const showNames = () =>{
-        document.getElementById(`likesFor${props.uploadId4}`).classList.toggle('d-none')
+        document.getElementById(`likesFor${props.uploadId}`).classList.toggle('d-none')
     }
 
     const numberOfLikes =()=>{
@@ -65,7 +64,7 @@ function Likes (props) {
             <div class='d-flex mt-2 justify-content-between position-relative'>
                 <div class='ms-2 postLikeBtn d-flex align-items-center'  onClick={sendLike}><i class="far fa-heart postLikeBtn "></i></div>
                 <div class='p-2 likeNumber fw-bold' onMouseEnter={showNames} onMouseLeave={showNames}>{numberOfLikes()}</div>
-                <ListOfLikers uploadId11={props.uploadId4} likers ={likeNames}/>
+                {/* <ListOfLikers uploadId1={props.uploadId} likers ={likeNames}/> */}
             </div>
             
         </div>

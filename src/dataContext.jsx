@@ -7,10 +7,10 @@ export const DataProvider = (props) => {
 
     useEffect(() =>{
         getPosts();
-        // getAdmin();
     }, []);
     
     const [posts, setPosts] = useState([]);
+
 
 //     function setStorage(value){
 //         localStorage.setItem('admin', JSON.stringify(value));
@@ -38,7 +38,6 @@ export const DataProvider = (props) => {
            
             setPosts(res.data.reverse()); 
             console.log(posts);
-           // console.log(res.data.reverse()); 
              
             
         }catch(err){
@@ -46,6 +45,7 @@ export const DataProvider = (props) => {
         }
     }
 
+    
 
 
  return(
