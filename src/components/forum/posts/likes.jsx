@@ -64,7 +64,7 @@ function Likes (props) {
             <div class='d-flex mt-2 justify-content-between position-relative'>
                 <div class='ms-2 postLikeBtn d-flex align-items-center'  onClick={sendLike}><i class="far fa-heart postLikeBtn "></i></div>
                 <div class='p-2 likeNumber fw-bold' onMouseEnter={showNames} onMouseLeave={showNames}>{numberOfLikes()}</div>
-                {/* <ListOfLikers uploadId1={props.uploadId} likers ={likeNames}/> */}
+                <ListOfLikers uploadId1={props.uploadId} likers ={likeNames}/>
             </div>
             
         </div>
