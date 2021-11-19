@@ -1,12 +1,9 @@
-import React, {useState, useContext} from 'react';
-import { DataContext } from '../../dataContext';
+import React, {useState} from 'react';
 import Axios from 'axios';
 import {Link } from 'react-router-dom';
 import Logo from '../../images/icon-left-font-monochrome-black.webp'
 
 function Login (){
-    const posts = useContext(DataContext)
-    const value = useContext(DataContext)
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');

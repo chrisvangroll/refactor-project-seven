@@ -1,18 +1,17 @@
-import React, {useState, useRef, useLayoutEffect} from 'react';
+import React, {useState, useRef, useLayoutEffect, useContext} from 'react';
 import CommentLikes from './commentLikes';
 import Axios from 'axios';
 import DeleteComment from './deleteComment';
+import {DataContext} from '../../dataContext';
 
 function Comment (props) {
     
-
+    const data = useContext(DataContext);
     const targetRef = useRef();
     const [dimensions, setDimensions] = useState({width: 0, height: 0});
     const [commentEdit, setCommentEdit] = useState(props.comment);
-   // const [listOpen, setListOpen] = useState(false);
 
-    
-  
+
     useLayoutEffect(() => {
         
           setDimensions({
@@ -24,18 +23,6 @@ function Comment (props) {
 
     const logCommentEdit = (e) =>{
         setCommentEdit(e.target.value);
-    }
-
-
-    function getStorage(){
-        let userId = localStorage.getItem('id');
-        let admin = localStorage.getItem('admin');
-        userId = JSON.parse(userId);
-        admin = JSON.parse(admin);
-        let users =[]
-        users.push(admin);
-        users.push(userId);
-        return users;
     }
 
     const updateComment = async ()=>{
@@ -54,14 +41,8 @@ function Comment (props) {
         }
       };
 
-  // const toEdit = () => props.commenter === getStorage() ? "" : "d-none";
   const toEdit = () =>{
-    if(getStorage()[0] === getStorage()[1]){
-        return ''
-    }else{
-        return props.commenter === getStorage()[1] ? "" : "d-none";
-    }
-    
+    return props.commenter === data.user ? "" : "d-none";
 } 
    const toggleClass = () =>{
     document.getElementById(`edit${props.commentId}`).classList.toggle('d-none');
@@ -92,13 +73,6 @@ function Comment (props) {
         document.getElementById(`commentLikes${props.commentId}`).classList.toggle('d-none')
     }
 
-    // document.querySelector('body').addEventListener('click', ()=> {
-    //   //console.log('event listener works') ;
-    //   //console.log(document.getElementById(`edit${props.commentId}`))
-    //   document.getElementById(`edit${props.commentId}`).classList.toggle('d-none') 
-
-    // })
- 
 
     return(
         
@@ -120,11 +94,8 @@ function Comment (props) {
             </div>
             <textarea resetValue={setCommentEdit} type="text" title='update comment' style={dimensions} onKeyPress={handleKeyPress} onChange={logCommentEdit} id={`editBox${props.commentId}`} value={commentEdit} class='position-absolute d-none editInput'/>
             <div id={`editSubmit${props.commentId}`} class='d-none'>
-                {/* <button onClick={updateComment} >Submit Edit</button> */}
                 <button class= 'cancelEdit fw-bold' onClick={finalToggle}>X</button>
             </div>
-            {/* <div>{dimensions.width}</div> */}
-
         </div>
        
     )

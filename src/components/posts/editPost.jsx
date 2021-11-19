@@ -3,9 +3,6 @@ import {Link } from 'react-router-dom';
 
 function EditPost (props) {
 
-   // const [uploadId, setId] = useState(props.uploadId5);
-
-
     function getStorage(){
         let userId = localStorage.getItem('id');
         let admin = localStorage.getItem('admin');
@@ -21,7 +18,7 @@ function EditPost (props) {
         if(getStorage()[0] === getStorage()[1]){
             return ''
         }else{
-            return props.author1 === getStorage()[1] ? "" : "d-none";
+            return props.author === getStorage()[1] ? "" : "d-none";
         }
         
     } 
@@ -29,7 +26,7 @@ function EditPost (props) {
    
     return(
         <div class='position-absolute postEditIcon' id ={props.uploadId}>
-            <Link  className = {toEdit()} to={{pathname: "/modify", state: {uploadId: props.uploadId5 } }}><i class="fas fa-edit"></i></Link>
+            <Link  className = {toEdit()} to={{pathname: "/modify", state: {uploadId: props.uploadId } }}><i class="fas fa-edit"></i></Link>
         </div>
     )
 }

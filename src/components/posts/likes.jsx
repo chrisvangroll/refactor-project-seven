@@ -1,20 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import Axios from 'axios';
+import { DataContext } from '../../dataContext';
 import ListOfLikers from './likerNames';
 
 function Likes (props) {
+    const data = useContext(DataContext);
     const [likes, setLikes] = useState([]);
     const [likeNames, setLikeNames] = useState([]);
 
     useEffect(() =>{
         getLikes();
     }, []);
-
-    function getStorage(){
-        let userId = localStorage.getItem('id');
-        userId = JSON.parse(userId);
-        return userId;
-    }
 
     const getLikes = async ()=>{
         let config = {
@@ -40,7 +36,7 @@ function Likes (props) {
         }
         try{
         const res = await Axios.post('https://p7-backend-cvg.herokuapp.com/forum/likes', {
-            userId : getStorage(),
+            userId : data.user,
             uploadId: props.uploadId 
         }
             );
@@ -66,7 +62,6 @@ function Likes (props) {
                 <div class='p-2 likeNumber fw-bold' onMouseEnter={showNames} onMouseLeave={showNames}>{numberOfLikes()}</div>
                 <ListOfLikers uploadId1={props.uploadId} likers ={likeNames}/>
             </div>
-            
         </div>
     )
 }

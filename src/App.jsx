@@ -2,11 +2,11 @@ import './styles/styles.css';
 import React, {useContext} from 'react';
 import { DataContext } from './dataContext';
 import Login from './components/auth/login.jsx';
-import Forum from './components/forum/posts/forum';
+import Forum from './components/posts/forum';
 import Account from'./components/nav/account.jsx';
 import Signup from  './components/auth/signUp.jsx';
 import MakePost from './components/nav/makePost.jsx';
-import Modify from './components/forum/posts/modify';
+import Modify from './components/posts/modify';
 import { DataProvider } from './dataContext';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -17,7 +17,6 @@ function App() {
     <DataProvider>
       <Router>
         <div className="App">
-        {/* available for all routes */}
       </div>
       <div className="content container">
         <Switch>

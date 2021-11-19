@@ -1,50 +1,42 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import Comment from './comment.jsx';
 import Axios from 'axios';
-//import { Button, Collapse } from 'react-bootstrap';
-//import '../../../../node_modules/bootstrap/dist/css/bootstrap.css';
+import { DataContext } from '../../dataContext.jsx';
 
 function Comments (props) {
-    //const [open, setOpen] = useState(false);
+    
+    const data = useContext(DataContext);
+    const [comments, setComments] = useState([]);
+    const [comment, setComment] = useState('');
+
     useEffect(() =>{
         getComments();
     }, []);
 
-    const [comments, setComments] = useState([]);
-//console.log(comments)
+
     const getComments = async ()=>{
         try{
-            const res = await Axios.get('https://p7-backend-cvg.herokuapp.com/comment/' + props.uploadId3);
+            const res = await Axios.get('https://p7-backend-cvg.herokuapp.com/comment/' + props.uploadId);
             setComments(res.data); 
-            //console.log(res.data);
             
         }catch(err){
             console.log(err);
         }
     }
 
-    const [comment, setComment] = useState('');
-
     const logComment = (e) =>{
         setComment(e.target.value);
-        // console.log(comment);
-    }
-
-    function getStorage(){
-        let userId = localStorage.getItem('id');
-        userId = JSON.parse(userId);
-        return userId;
     }
 
     const clearInputField = () =>{
-       document.getElementById(`input${props.uploadId3}`).value='';
+       document.getElementById(`input${props.uploadId}`).value='';
     }
 
     const sendComment = async ()=>{
         try{
             const res = await Axios.post('https://p7-backend-cvg.herokuapp.com/comment',{
-            userId: getStorage(),
-            uploadId: props.uploadId3,
+            userId: data.user,
+            uploadId: props.uploadId,
             content : comment
             });
             console.log(res.data.message);
@@ -56,11 +48,10 @@ function Comments (props) {
       };
 
     const toggleCommentSection = () =>{
-        document.getElementById(`commentSection${props.uploadId3}`).classList.toggle('d-none');
+        document.getElementById(`commentSection${props.uploadId}`).classList.toggle('d-none');
     }
 
     const handleKeyPressComment = e => {
-        //console.log(e.key)
         if (e.key === 'Enter') {
             sendComment();
         }
@@ -73,12 +64,12 @@ function Comments (props) {
                 >
                 Comments {`(${comments.length})`}
             </button>
-            <div id={`commentSection${props.uploadId3}`} class='d-none commentSection'>{comments.map(comment=>(
-                <Comment getComments = {getComments} commentId={comment.id}  uploadId3={comment.uploadId} comment={comment.comment} name={comment.name} commenter={comment.commenter}/>
+            <div id={`commentSection${props.uploadId}`} class='d-none commentSection'>{comments.map(comment=>(
+                <Comment getComments = {getComments} commentId={comment.id}  uploadId={comment.uploadId} comment={comment.comment} name={comment.name} commenter={comment.commenter}/>
             ))}</div>
         
             <div class= 'd-flex flex-row makeComment'>
-                <input class= 'addComment' title='make a comment' type="text" onKeyPress = {handleKeyPressComment} id={`input${props.uploadId3}`} placeholder= 'Write a comment....' onChange = {logComment}/>
+                <input class= 'addComment' title='make a comment' type="text" onKeyPress = {handleKeyPressComment} id={`input${props.uploadId}`} placeholder= 'Write a comment....' onChange = {logComment}/>
                 <button class= 'submitCommentBtn' onClick = {sendComment}>Submit</button>
             </div>
         </div>

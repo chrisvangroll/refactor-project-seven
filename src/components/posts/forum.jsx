@@ -1,15 +1,16 @@
 import React, {useContext} from 'react';
-import { DataContext } from '../../../dataContext';
+import { DataContext } from '../../dataContext';
 // import Axios from 'axios';
 //import {Link } from 'react-router-dom';
 // import Post from './post';
-import Nav from '../../nav/nav';
+import Nav from '../nav/nav';
 import Likes from './likes';
+import EditPost from './editPost';
+import Comments from '../comments/comments';
 
 function Forum (props){
 
     const data = useContext(DataContext);
-    //console.log(data.posts[0])
    
     return(
         <div>
@@ -19,7 +20,7 @@ function Forum (props){
                 <div className="postContainer p-2 position-relative">
                     <div class='d-flex justify-content-center'>
                     <h2 class='mb-0' >{post.title}</h2>
-                    {/* <EditPost author1 = {props.author} uploadId5 = {props.uploadId}/> */}
+                    <EditPost author = {post.author} uploadId = {post.id}/>
                     </div>
                     <div class='text-center mb-2'>Posted by {post.name}</div>
                     <div class='d-flex justify-content-center mb-3'>
@@ -27,7 +28,7 @@ function Forum (props){
                     </div>
                     <Likes uploadId = {post.id}/>
                 </div>
-                {/* <Comments uploadId3 = {props.uploadId}/> */}
+                <Comments uploadId = {post.id}/>
                 {/* <MakeComment uploadId2= {props.uploadId}/> */}
             </div>
             ))}</main> 

@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-//import '../styles/auth.css';
-//import './auth.css';
 import Axios from 'axios';
 import {Link } from 'react-router-dom';
 import Logo from '../../images/icon-left-font-monochrome-black.webp'
@@ -93,7 +91,6 @@ function Signup (){
                     <Link class="nav-link p-0" to="/">Login</Link> 
                 </div>
             <div class='text-center mt-2 fw-bold m-auto errorMessage'>{message}</div>
-            {/* <h2>{message}</h2> */}
             <br />
         </div>
         

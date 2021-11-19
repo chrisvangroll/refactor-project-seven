@@ -1,5 +1,6 @@
 import React from 'react';
 //import MakeComment from './makeComment.jsx';
+// import Comments from '../comments/comments';
 import Comments from '../comments/comments';
 import Likes from './likes.jsx';
 import EditPost from './editPost.jsx';

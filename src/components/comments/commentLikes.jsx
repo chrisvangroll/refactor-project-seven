@@ -42,18 +42,10 @@ function CommentLikes (props) {
        
     }
 
-    // document.querySelector('body').addEventListener('click', () =>{
-    //     showList();
-    //   })
-
     const showList = ()=>{
         document.getElementById(`likes${props.commentId2}`).classList.toggle('d-none');
     }
     return(
-        // <div >
-        //     <button onClick={sendLike}>Like</button>
-        //    <div>Number of likes = {likes}</div>
-        // </div>
         <div id={`commentLikes${props.commentId2}`} class = 'd-flex flex-row likeContainer'>
             <div class = 'd-flex flex-row'>
                 <div class='likeButton d-flex align-items-center' onClick={sendLike}><i class="far fa-heart likeButton"></i></div>
