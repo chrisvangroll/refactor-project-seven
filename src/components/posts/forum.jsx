@@ -1,8 +1,5 @@
 import React, {useContext} from 'react';
 import { DataContext } from '../../dataContext';
-// import Axios from 'axios';
-//import {Link } from 'react-router-dom';
-// import Post from './post';
 import Nav from '../nav/nav';
 import Likes from './likes';
 import EditPost from './editPost';
@@ -15,6 +12,7 @@ function Forum (props){
     return(
         <div>
             <Nav/>
+            <div>{}</div>
             <main class= 'container d-flex flex-column align-items-center mt-5 p-0'>{data.posts.map(post=>(
                 <div class='mb-5 post' id ={post.id}>
                 <div className="postContainer p-2 position-relative">
@@ -32,9 +30,6 @@ function Forum (props){
                 {/* <MakeComment uploadId2= {props.uploadId}/> */}
             </div>
             ))}</main> 
-
-             {/* <button onClick= {getPosts}>click for data</button>
-            {displayPosts} */}
         </div>
     )
 }

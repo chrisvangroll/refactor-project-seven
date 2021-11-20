@@ -1,29 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link } from 'react-router-dom';
+import { DataContext } from '../../dataContext';
 
 function EditPost (props) {
 
-    function getStorage(){
-        let userId = localStorage.getItem('id');
-        let admin = localStorage.getItem('admin');
-        userId = JSON.parse(userId);
-        admin = JSON.parse(admin);
-        let users =[]
-        users.push(admin);
-        users.push(userId);
-        return users;
-    }
-    //console.log(getStorage())
-    const toEdit = () =>{
-        if(getStorage()[0] === getStorage()[1]){
-            return ''
-        }else{
-            return props.author === getStorage()[1] ? "" : "d-none";
-        }
-        
-    } 
+    const data = useContext(DataContext);
 
-   
+    const toEdit = () => props.author === data.user ? "" : "d-none";
+    
     return(
         <div class='position-absolute postEditIcon' id ={props.uploadId}>
             <Link  className = {toEdit()} to={{pathname: "/modify", state: {uploadId: props.uploadId } }}><i class="fas fa-edit"></i></Link>
